@@ -5,11 +5,10 @@ type Props = {
     params : Promise<{productid : string}>,
 }
 
-export async function generateMetaData ({params,} : Props ) : Promise<Metadata> {
+export async function generateMetadata ({params,} : Props ) : Promise<Metadata> {
   const id = (await params).productid;
-
   return {
-    title: `${id} Details`,
+    title: `${id.charAt(0).toUpperCase() + id.slice(1)} Details`,
   }
 
 }
