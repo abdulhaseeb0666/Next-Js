@@ -1,17 +1,23 @@
 "use client";
+ 
+import { useRouter } from "next/navigation"
 
-import { useRouter } from "next/router"
+const Page = () => {
+    const router= useRouter();
 
-const page = () => {
-    const router = useRouter();
-  return (
-    <div>
-      <button type="button" onClick={()=>{
-        console.log("Order Place");
-        router.push("/");
-      }}>Place Order</button>
+    const handleSubmit = () => {
+        alert("Order Placed");
+        router.push('/');
+    }
+
+    return (
+        <div>
+      <button type="button" 
+      onClick={handleSubmit}
+      className="border-black border-2 text-xl px-2 font-bold absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] cursor-pointer"
+    >Place Order</button>
     </div>
   )
 }
 
-export default page
+export default Page
