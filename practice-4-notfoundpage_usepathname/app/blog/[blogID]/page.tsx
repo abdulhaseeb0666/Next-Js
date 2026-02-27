@@ -2,10 +2,10 @@ import { notFound } from "next/navigation"
 
 const page = async ({params} : {params : {blogID : string}}) => {
     const blgID = (await params).blogID
-
-    if(blgID === "number"){
-        return notFound();
-    }
+    
+  if( Number(blgID) > 10){
+    notFound();
+  }
 
   return (
     <div>
