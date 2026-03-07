@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -23,6 +25,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+  const randomNumber = Math.floor(Math.random() * 100);
+  if(randomNumber > 50){
+    throw new Error("Random Number is Greater than 50.");
+  }
+  
   return (
     <html lang="en">
       <body
